@@ -1,4 +1,4 @@
-@extends("layouts.fronend.header")
+@extends("layouts.frontend.master")
 
 @section('content')
 	<div class="bg0 m-t-23 p-b-140">
