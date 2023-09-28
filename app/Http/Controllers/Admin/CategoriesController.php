@@ -23,5 +23,11 @@ class CategoriesController extends Controller
        }
        return back()->with('success',"Successfully created category");
     }
+    public function all(){
+
+        $categories =  Category::all();
+
+        return view('admin.categories.all',compact('categories'));
+    }
 
 }
