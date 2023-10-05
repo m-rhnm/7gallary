@@ -30,6 +30,7 @@
                       <form action="{{ route('admin.users.update',$users->id) }}" method="post">
                         @csrf
                         @method('PUT')
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
                       <div class="card-body">
                               <div class="row">
                                   <div class="col-md-6">
