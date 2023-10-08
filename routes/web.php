@@ -5,8 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\ProductsController as HomeProductsController;
 
-
+Route::prefix('')->group(function(){
+    Route::get('',[HomeProductsController::class,'index'])->name('home.products.all');
+    Route::get('{product_id}/show',[HomeProductsController::class,'show'])->name('home.products.show');
+});
 
 
 Route::prefix('admin')->group(function(){
@@ -42,6 +47,7 @@ Route::prefix('admin')->group(function(){
     Route::prefix('payments')->group(function(){
         Route::get('',[PaymentsController::class,'all'])->name('admin.payments.all');
     });
+    
     
     
 });
