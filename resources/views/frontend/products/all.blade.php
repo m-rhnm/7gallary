@@ -32,12 +32,14 @@
 				<!-- Search product -->
 				<div class="dis-none panel-search w-full p-t-10 p-b-15">
 					<div class="bor8 dis-flex p-l-15">
-						<button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
+                        <form action="{{ route('home.products.all') }}" method="get">
+                        <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
 							<i class="zmdi zmdi-search"></i>
 						</button>
-
-						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="متن خود را اینجا بنویسید و enter بزنید ...">
-					</div>	
+                        
+						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search" placeholder="متن خود را اینجا بنویسید و enter بزنید ...">
+                        </form>
+							</div>	
 				</div>
 
 				<!-- Filter -->
@@ -103,31 +105,31 @@
 
                             <ul>
                                 <li class="p-b-6">
-                                    <a href="#" class="filter-link stext-106 trans-04">
+                                    <a href="?filter=orderby&action=default" class="filter-link stext-106 trans-04">
                                         پیش فرض
                                     </a>
                                 </li>
 
                                 <li class="p-b-6">
-                                    <a href="#" class="filter-link stext-106 trans-04">
+                                    <a href="?filter=orderby&action=popular" class="filter-link stext-106 trans-04">
                                         محبوبیت
                                     </a>
                                 </li>
 
                                 <li class="p-b-6">
-                                    <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
+                                    <a href="?filter=orderby&action=newest" class="filter-link stext-106 trans-04 filter-link-active">
                                         جدیدترین
                                     </a>
                                 </li>
 
                                 <li class="p-b-6">
-                                    <a href="#" class="filter-link stext-106 trans-04">
+                                    <a href="?filter=orderby&action=cheapest" class="filter-link stext-106 trans-04">
                                         قیمت:‌ کم به زیاد
                                     </a>
                                 </li>
 
                                 <li class="p-b-6">
-                                    <a href="#" class="filter-link stext-106 trans-04">
+                                    <a href="?filter=orderby&action=expensive" class="filter-link stext-106 trans-04">
                                         قیمت:‌زیاد به کم
                                     </a>
                                 </li>
