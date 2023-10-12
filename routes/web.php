@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Home\CheckoutController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Home\ProductsController as HomeProductsController;
 
 
 Route::prefix('')->group(function(){
@@ -58,4 +59,7 @@ Route::prefix('admin')->group(function(){
     
 });
 
-Route::get('pay',[PaymentController::class,'pay']);
+Route::prefix('payment')->group(function(){
+    Route::post('pay',[PaymentController::class,'pay'])->name('payment.pay');
+    Route::post('callback',[PaymentController::class,'callback'])->name('payment.callback');
+});
