@@ -16,7 +16,7 @@ Route::prefix('')->group(function(){
     Route::get('{product_id}/show',[HomeProductsController::class,'show'])->name('home.products.show');
     Route::get('{product_id}/addToBasket',[BasketController::class,'addToBasket'])->name('home.basket.add');
     Route::get('{product_id}/removeFromBasket',[BasketController::class,'removeFromBasket'])->name('home.basket.remove');
-    Route::get('checkout',[CheckoutController::class,'show'])->name('home.checkoute');
+    Route::get('checkout',[CheckoutController::class,'show'])->name('home.checkout');
 
  });
 

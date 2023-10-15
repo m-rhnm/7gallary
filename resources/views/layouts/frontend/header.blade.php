@@ -87,7 +87,8 @@
                         <i class="zmdi zmdi-search"></i>
                     </div>
 
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="{{ is_null(Cookie::get('basket')) ? 0 : count(json_decode(Cookie::get('basket'),true)) }}">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" 
+                    data-notify="{{ is_null(Cookie::get('basket')) or empty(Cookie::get('basket')) ? 0 : count(json_decode(Cookie::get('basket'),true)) }}">
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
                 </div>
@@ -108,7 +109,7 @@
                 <i class="zmdi zmdi-search"></i>
             </div>
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="{{ is_null(Cookie::get('basket')) ? 0 : count(json_decode(Cookie::get('basket'),true)) }}">
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="{{ is_null(Cookie::get('basket')) or empty(Cookie::get('basket')) ? 0 : count(json_decode(Cookie::get('basket'),true)) }}">
                 <i class="zmdi zmdi-shopping-cart"></i>
             </div>
 
@@ -172,7 +173,7 @@
 
         <div class="header-cart-content flex-w js-pscroll">
             <ul class="header-cart-wrapitem w-full">
-                  @if(!is_null(Cookie::get('basket')))  
+                  @if(!is_null(Cookie::get('basket')) and !empty(Cookie::get('basket')))  
 
                   @foreach (json_decode(Cookie::get('basket'), true) as $id => $value)
                 <li class="header-cart-item flex-w flex-t m-b-12">
@@ -197,11 +198,11 @@
 
             <div class="w-full">
                 <div class="header-cart-total w-full p-tb-40">
-                    جمع کل: {{  is_null(cookie::get('basket')) ? 0 : array_sum(array_column(json_decode(cookie::get('basket'),true),'price')) }} هزار تومان
+                    جمع کل: {{  is_null(cookie::get('basket')) or empty(Cookie::get('basket')) ? 0 : array_sum(array_column(json_decode(cookie::get('basket'),true),'price')) }} هزار تومان
                 </div>
 
                 <div class="header-cart-buttons flex-w w-full">
-                    <a href="{{ route('home.checkoute') }}" class="flex-c-m stext-101 cl0 size-107 w-100 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-l-8 m-b-10">
+                    <a href="{{ route('home.checkout') }}" class="flex-c-m stext-101 cl0 size-107 w-100 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-l-8 m-b-10">
                         مشاهده سبد خرید و پرداخت
                     </a>
                 </div>

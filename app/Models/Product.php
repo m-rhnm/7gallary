@@ -16,4 +16,8 @@ class Product extends Model
     public function owner(){
         return $this->belongsTo(User::class) ;
     }
+    public function orderItem()
+    {
+        return $this->hasOne(OrderItem::class);
+    }
 }

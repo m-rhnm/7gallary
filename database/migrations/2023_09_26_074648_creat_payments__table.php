@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('ref_id');
-            $table->unsignedInteger('res_id');
+           // $table->unsignedInteger('ref_id');
+            $table->char('ref_code',128)->nullable();
+            $table->unsignedInteger('res_id')->nullable();
             $table->enum('getaway',['zarinpal','idpay']);
             $table->enum('status',['paied','unpaid']);
             $table->unsignedBigInteger('order_id');

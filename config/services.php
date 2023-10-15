@@ -33,7 +33,7 @@ return [
     
     'geteways'=> [
         'id_pay' =>  [
-           'api_key' => '7d6ccbca-715f-46ff-ae64-fbb420581e63'
+           'api_key' => '4852082f-b3db-4cc6-b8a9-10523dfbfaab'
         ]
     ]
 

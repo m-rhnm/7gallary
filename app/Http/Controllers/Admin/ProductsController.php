@@ -23,7 +23,7 @@ class ProductsController extends Controller
     }
     public function store(StoreRequest $request){
         $validation_data=$request->validated();
-       $admin = User::where('email','z.rahnemazadeh@gmail.com')->first(); 
+       $admin = User::where('email','z.rahnanemazadeh@gmail.com')->first(); 
         $createdProducts= Product::create([
                 'title' => $validation_data['title'],
                 'category_id' => $validation_data['category_id'],
